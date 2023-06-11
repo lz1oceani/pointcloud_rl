@@ -96,8 +96,14 @@ We used random seeds 1000, 2000, 3000 in our experiments. This can be altered us
 Usage:
 
 ```
-python ./pyrl/apis/run_rl.py config_file_path --work-dir {work_directory_path} [--seed {seed}] [--gpu-ids {gpu_ids...} | --num-gpus {number_of_gpus}] [--cfg-options ["env_cfg.env_name={environment_name}"] ["env_cfg.obs_mode={observation_mode}"]]
+python ./pyrl/apis/run_rl.py config_file_path \
+--work-dir {work_directory_path} \
+[--seed {seed}] \
+[--gpu-ids {gpu_ids...} | --num-gpus {number_of_gpus}] \
+[--cfg-options ["env_cfg.env_name={environment_name}"] ["env_cfg.obs_mode={observation_mode}"]]
 ```
+
+Explanations:
 
 - `/pyrl/apis/run_rl.py` is the driver module that starts the training. The first argument to this module is the configuration file path. 
 
@@ -120,13 +126,16 @@ python ./pyrl/apis/run_rl.py config_file_path --work-dir {work_directory_path} [
 As an example, to run DrQ with Jitter augmentation on ManiSkill's `MoveBucket_4000-v0` Environment: 
 
 ```
-python ./pyrl/apis/run_rl.py ./configs/mfrl/drq/maniskill/pn_jitter.py --work-dir=/path/to/workdir/ --seed 1000 --num-gpus 2 --cfg-options "env_cfg.env_name=MoveBucket_4000-v0" 
+python ./pyrl/apis/run_rl.py ./configs/mfrl/drq/maniskill/pn_jitter.py \
+--work-dir=/path/to/workdir/ --seed 1000 --num-gpus 2 --cfg-options "env_cfg.env_name=MoveBucket_4000-v0" 
 ```
 
 Another example of running SAC with rgbd input on the Walker Walk task of DM Control:
 
 ```
-python ./pyrl/apis/run_rl.py ./configs/mfrl/sac/dm_control/cnn.py --work-dir=/path/to/workdir/ --seed 1000 --gpu-ids 0 --cfg-options "env_cfg.env_name=dmc_walker_walk-v0" "env_cfg.obs_mode=rgbd"
+python ./pyrl/apis/run_rl.py ./configs/mfrl/sac/dm_control/cnn.py \
+--work-dir=/path/to/workdir/ --seed 1000 --gpu-ids 0 \
+--cfg-options "env_cfg.env_name=dmc_walker_walk-v0" "env_cfg.obs_mode=rgbd"
 
 # if you encounter errors when running DM Control environments in headless mode, add "MUJOCO_GL=egl" before the command.
 ```
@@ -134,7 +143,8 @@ python ./pyrl/apis/run_rl.py ./configs/mfrl/sac/dm_control/cnn.py --work-dir=/pa
 For the motivating example, to run DrQ with rgbd observation mode:
 
 ```
-python ./pyrl/apis/run_rl.py ./configs/mfrl/drq/dm_control/cnn_shift_motivating.py --work-dir=/path/to/workdir/ --seed 1000 --gpu-ids 0 --cfg-options "env_cfg.obs_mode=rgbd"
+python ./pyrl/apis/run_rl.py ./configs/mfrl/drq/dm_control/cnn_shift_motivating.py \
+--work-dir=/path/to/workdir/ --seed 1000 --gpu-ids 0 --cfg-options "env_cfg.obs_mode=rgbd"
 
 # Since there is only one environment for our motivating example, we do not need to change the environment_name. 
 ```

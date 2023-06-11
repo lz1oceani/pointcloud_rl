@@ -1,0 +1,40 @@
+'1011':
+  num_target_links: 2
+  partnet_mobility_id: 1011
+  scale: 0.50305317343908
+'1012':
+  num_target_links: 1
+  partnet_mobility_id: 1012
+  scale: 0.6076146264992892
+'1015':
+  num_target_links: 1
+  partnet_mobility_id: 1015
+  scale: 0.6960705425730668
+'1022':
+  num_target_links: 2
+  partnet_mobility_id: 1022
+  scale: 0.713139597076128
+'1043':
+  num_target_links: 2
+  partnet_mobility_id: 1043
+  scale: 0.609626650295203
+'1048':
+  num_target_links: 1
+  partnet_mobility_id: 1048
+  scale: 0.4585704524714656
+'1059':
+  num_target_links: 2
+  partnet_mobility_id: 1059
+  scale: 0.4650886566307691
+'1069':
+  num_target_links: 2
+  partnet_mobility_id: 1069
+  scale: 0.593681552009298
+'1071':
+  num_target_links: 1
+  partnet_mobility_id: 1071
+  scale: 0.49103096862171836
+'1072':
+  num_target_links: 2
+  partnet_mobility_id: 1072
+  scale: 0.6105159852163556

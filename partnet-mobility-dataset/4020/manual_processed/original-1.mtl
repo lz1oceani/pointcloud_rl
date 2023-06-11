@@ -1,0 +1,24 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl material_0_2.021
+Ns 20.000005
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd /home/fx/datasets/PartNetMobilityVHACD/100473/images/texture_0.jpg
+
+newmtl material_1_0.019
+Ns 20.000005
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.329412 0.329412 0.329412
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd /home/fx/datasets/PartNetMobilityVHACD/100473/images/texture_1.jpg

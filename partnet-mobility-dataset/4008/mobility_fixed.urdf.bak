@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="partnet_1467dd73-ed45-48f2-aa43-7dfc075e33e9">
+ <link name="base"/>
+ <link name="link_0">
+  <visual>
+   <geometry>
+    <mesh filename="cvx_processed/link_0_visual.obj"/>
+   </geometry>
+  </visual>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx0.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx1.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx2.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx3.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx4.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx5.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx6.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx7.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx8.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx9.obj"/>
+   </geometry>
+  </collision>
+ </link>
+ <joint name="joint_0" type="revolute">
+  <origin xyz="0 0.5615423763808596 -0.01884142197784891"/>
+  <axis xyz="-1 0 0"/>
+  <child link="link_0"/>
+  <parent link="link_1"/>
+  <limit lower="-2.638937829015426" upper="0.7099999397112934"/>
+ </joint>
+ <link name="link_1">
+  <visual>
+   <geometry>
+    <mesh filename="cvx_processed/link_1_visual.obj"/>
+   </geometry>
+  </visual>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx0.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx1.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx2.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx3.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx4.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx5.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx6.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx7.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-4_cvx8.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx0.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx1.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx2.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx3.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx4.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx5.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx6.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx7.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx8.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-3_cvx9.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx0.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx1.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx2.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx3.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx4.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx5.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx6.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx7.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx8.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx9.obj"/>
+   </geometry>
+  </collision>
+ </link>
+ <joint name="joint_1" type="fixed">
+  <origin rpy="1.570796326794897 0 -1.570796326794897" xyz="0 0 0"/>
+  <child link="link_1"/>
+  <parent link="base"/>
+ </joint>
+</robot>

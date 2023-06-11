@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="partnet_3157ca03de3655acf3891d3e63e0baa5">
+ <link name="base"/>
+ <link name="link_0">
+  <visual>
+   <geometry>
+    <mesh filename="cvx_processed/link_0_visual.obj"/>
+   </geometry>
+  </visual>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx0.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx1.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx2.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx3.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx4.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx5.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx6.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx7.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx8.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-1_cvx9.obj"/>
+   </geometry>
+  </collision>
+ </link>
+ <joint name="joint_0" type="revolute">
+  <origin xyz="0 0.430500873641537 -0.06576132556510857"/>
+  <axis xyz="-1 0 0"/>
+  <child link="link_0"/>
+  <parent link="link_1"/>
+  <limit lower="-2.1802653015913163" upper="1.407433508808227"/>
+ </joint>
+ <link name="link_1">
+  <visual>
+   <geometry>
+    <mesh filename="cvx_processed/link_1_visual.obj"/>
+   </geometry>
+  </visual>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx0.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx1.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx2.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx3.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx4.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx5.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx6.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx7.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx8.obj"/>
+   </geometry>
+  </collision>
+  <collision>
+   <geometry>
+    <mesh filename="cvx_processed/original-2_cvx9.obj"/>
+   </geometry>
+  </collision>
+ </link>
+ <joint name="joint_1" type="fixed">
+  <origin rpy="1.570796326794897 0 -1.570796326794897" xyz="0 0 0"/>
+  <child link="link_1"/>
+  <parent link="base"/>
+ </joint>
+</robot>

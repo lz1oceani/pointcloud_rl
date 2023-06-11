@@ -1,0 +1,125 @@
+physics:
+  enhanced_determinism: false
+  pcm: false
+  ccd: false
+  stabilization: false
+  average_point: false
+  friction_solver_per_iteration: true
+  adaptive_force: false
+  contact_offset: 0.1
+  bounce_threshold: 2
+  sleep_threshold: 0.005
+  solver_iterations: 25
+  solver_velocity_iterations: 2
+  default_dynamic_friction: 0.5
+  default_static_friction: 0.5
+  default_restitution: 0.1
+  gravity: [0, 0, -9.81]
+  simulation_frequency: 500
+  control_frequency: 50
+render:
+  ambient_light:
+    color: [0.3, 0.3, 0.3]
+  point_lights:
+    - color: [1, 1, 1]
+      position: [0, 0, 1]
+  directional_lights:
+    - color: [1, 1, 1]
+      direction: [0, 0, -1]
+  cameras:
+    - name: "xxx"
+      position: [-1, 0, 0]
+      rotation: [1, 0, 0, 0]
+      fovy: 70
+      near: 0.1
+      far: 10
+      width: 800
+      height: 600
+  materials:
+    - name: "white_diffuse"
+      base_color: [0.8, 0.8, 0.8, 1]
+      metallic: 0
+      roughness: 0.9
+      specular: 0
+    - name: "copper"
+      base_color: [0.975, 0.453, 0.221, 1]
+      metallic: 1
+      roughness: 0.7
+      specular: 0.04
+scene:
+  articulations:
+    - name: "xxx"
+      urdf: "xxx.urdf"
+      position: [0, 0, 0]
+      rotation: [1, 0, 0, 0]
+  actors:
+    - name: "xxx"
+      collisions:
+        - type: sphere
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          radius: 1
+          visual: true
+          material: "copper"
+        - type: box
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          half_extents: [1, 1, 1]
+        - type: capsule
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          radius: 1
+          half_height: 1
+        - type: single_convex
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          scale: [1, 1, 1]
+          file: "xxx.obj"
+        - type: multiple_convex
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          scale: [1, 1, 1]
+          file: "xxx.obj"
+      visuals:
+        - type: sphere
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          radius: 1
+          material: "copper"
+        - type: box
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          half_extents: [1, 1, 1]
+          material: "white_diffuse"
+        - type: capsule
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          radius: 1
+          half_height: 1
+          material: "copper"
+        - type: mesh
+          position: [0, 0, 0]
+          rotation: [1, 0, 0, 0]
+          scale: [1, 1, 1]
+          file: "xxx.obj"
+agent:
+  agent_class: "sapien_rl.env.agent.PandaAgent"
+  urdf_file: "panda.urdf"
+  joint_order: ["j1", "j2", "j3", "j4"]
+  initial_qpos: [0, 0, 0, 0]
+  position: [0, 0, 0]
+  rotation: [1, 0, 0, 0]
+  active_joints: ["j1", "j2", "j3"]
+  balance_passive_force: true
+  scale: 1
+  fix_base: true
+  joints:
+    - name: "j1"
+      stiffness: 0
+      damping: 0
+      friction: 0
+      action_type: "force"  # force/velocity
+    - name: "j4"
+      stiffness: 0
+      damping: 0
+      friction: 0

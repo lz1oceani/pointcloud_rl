@@ -4,11 +4,12 @@ In this work, we conduct the first systematic study on the efficacy of 3D visual
 
 - [On the Efficacy of 3D Point Cloud Reinforcement Learning](#on-the-efficacy-of-3d-point-cloud-reinforcement-learning)
   - [Installation](#installation)
-  - [Tasks / Environments](#tasks--environments)
-  - [Algorithms and Networks](#algorithms-and-networks)
-  - [Config files](#config-files)
   - [Experiment Running instructions](#experiment-running-instructions)
   - [Tips for running DM Control in headless mode](#tips-for-running-dm-control-in-headless-mode)
+  - [More Repo Details](#more-repo-details)
+    - [Tasks / Environments](#tasks--environments)
+    - [Algorithms and Networks](#algorithms-and-networks)
+    - [Config files](#config-files)
   - [Citation](#citation)
   - [License](#license)
 
@@ -45,50 +46,6 @@ pip install git+https://github.com/lz1oceani/torchsparse.git
 For the pytorch installation, you can change the cudatoolkit version to comply with the CUDA version of your machine. 
 
 
-## Tasks / Environments
-
-DM Control environment names follow this format: `dmc_{domain_name}_{task_name}-v0`. We support all DM Control environments. Specifically,
-
-- dmc_cheetah_run-v0
-- dmc_walker_walk-v0
-- dmc_cartpole_swingup-v0
-- dmc_reacher_easy-v0
-- dmc_finger_spin-v0
-- dmc_ball_in_cup_catch-v0
-
-ManiSkill environment names follow this format: `{task_name}_[{obj_number} | train]-v0`. The environments used in our experiments are:
-
-- Environments without object variations: 
-    - OpenCabinetDoor_1000-v0
-    - OpenCabinetDrawer_1000-v0
-    - PushChair_3001-v0
-    - MoveBucket_4000-v0
-- Environments with object variations:
-    - OpenCabinetDoor_train-v0
-    - OpenCabinetDrawer_train-v0
-    - PushChair_train-v0
-    - MoveBucket_train-v0
-
-## Algorithms and Networks
-Location of algorithm implementations:
-
-- SAC: 
-`./pyrl_code_release_v1/pyrl/methods/mfrl/sac.py`
-- DrQ:
-`./pyrl_code_release_v1/pyrl/methods/mfrl/drq.py`
-
-Location of network implementations: 
-
-- CNN: `./pyrl_code_release_v1/pyrl/networks/backbones/cnn.py`
-- PointNet: `./pyrl_code_release_v1/pyrl/networks/backbones/pointnet.py`
-- SparseConvNet: `./pyrl_code_release_v1/pyrl/networks/backbones/sp_resnet.py`
-
-## Config files 
-Config files are located in the `configs/mfrl` directory, and are divided by algorithms (sac, drq) and environment domains (dmc or maniskill). Names of config file follow the format `network_type[_augmentation].py`. The `network_type` can be `cnn` for CNN, `pn` for PointNet, and `sparse_conv` for SparseConvNet. For DrQ configuration files, the `[augmentation]` can be `shift`, `rot`, `jitter`, `colorjitter`, or`dropout`. PointNet can use all augmentations, while CNN can only use the `shift` augmentation. 
-
-If a configuration file contains the suffix `motivating`, they are for the motivating example we provided in our experiments and does not belong to the DM Control environments. 
-
-For example, the configuration file for running SAC on the `walker_walk` environment with rgb or rgbd observation mode is `./configs/mfrl/sac/dm_control/cnn.py`. The configuration file for running DrQ on the MoveBucket_4000-v0 environment with point cloud observation mode and jitter augmentation is `./configs/mfrl/drq/maniskill/pn_jitter.py`.
 
 ## Experiment Running instructions 
 We used random seeds 1000, 2000, 3000 in our experiments. This can be altered using the `--seed` flag.
@@ -150,7 +107,6 @@ python ./pyrl/apis/run_rl.py ./configs/mfrl/drq/dm_control/cnn_shift_motivating.
 ```
 
 
-
 ## Tips for running DM Control in headless mode
 
 If you encounter errors when running DM Control environments in headless mode, try the following:
@@ -158,6 +114,56 @@ If you encounter errors when running DM Control environments in headless mode, t
 ```
 export MUJOCO_GL=egl python {command} #or MUJOCO_GL=osmesa
 ```
+
+
+## More Repo Details
+
+### Tasks / Environments
+
+DM Control environment names follow this format: `dmc_{domain_name}_{task_name}-v0`. We support all DM Control environments. Specifically,
+
+- dmc_cheetah_run-v0
+- dmc_walker_walk-v0
+- dmc_cartpole_swingup-v0
+- dmc_reacher_easy-v0
+- dmc_finger_spin-v0
+- dmc_ball_in_cup_catch-v0
+
+ManiSkill environment names follow this format: `{task_name}_[{obj_number} | train]-v0`. The environments used in our experiments are:
+
+- Environments without object variations: 
+    - OpenCabinetDoor_1000-v0
+    - OpenCabinetDrawer_1000-v0
+    - PushChair_3001-v0
+    - MoveBucket_4000-v0
+- Environments with object variations:
+    - OpenCabinetDoor_train-v0
+    - OpenCabinetDrawer_train-v0
+    - PushChair_train-v0
+    - MoveBucket_train-v0
+
+### Algorithms and Networks
+Location of algorithm implementations:
+
+- SAC: 
+`./pyrl_code_release_v1/pyrl/methods/mfrl/sac.py`
+- DrQ:
+`./pyrl_code_release_v1/pyrl/methods/mfrl/drq.py`
+
+Location of network implementations: 
+
+- CNN: `./pyrl_code_release_v1/pyrl/networks/backbones/cnn.py`
+- PointNet: `./pyrl_code_release_v1/pyrl/networks/backbones/pointnet.py`
+- SparseConvNet: `./pyrl_code_release_v1/pyrl/networks/backbones/sp_resnet.py`
+
+### Config files 
+Config files are located in the `configs/mfrl` directory, and are divided by algorithms (sac, drq) and environment domains (dmc or maniskill). Names of config file follow the format `network_type[_augmentation].py`. The `network_type` can be `cnn` for CNN, `pn` for PointNet, and `sparse_conv` for SparseConvNet. For DrQ configuration files, the `[augmentation]` can be `shift`, `rot`, `jitter`, `colorjitter`, or`dropout`. PointNet can use all augmentations, while CNN can only use the `shift` augmentation. 
+
+If a configuration file contains the suffix `motivating`, they are for the motivating example we provided in our experiments and does not belong to the DM Control environments. 
+
+For example, the configuration file for running SAC on the `walker_walk` environment with rgb or rgbd observation mode is `./configs/mfrl/sac/dm_control/cnn.py`. The configuration file for running DrQ on the MoveBucket_4000-v0 environment with point cloud observation mode and jitter augmentation is `./configs/mfrl/drq/maniskill/pn_jitter.py`.
+
+
 
 
 ## Citation

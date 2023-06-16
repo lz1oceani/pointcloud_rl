@@ -171,7 +171,12 @@ For example, the configuration file for running SAC on the `walker_walk` environ
 Please cite our paper if you find our idea helpful. Thanks a lot!
 
 ```
-TBD
+@article{ling2023efficacy,
+  title={On the Efficacy of 3D Point Cloud Reinforcement Learning},
+  author={Ling, Zhan and Yao, Yunchao and Li, Xuanlin and Su, Hao},
+  journal={arXiv preprint arXiv:2306.06799},
+  year={2023}
+}
 ```
 
 ## License

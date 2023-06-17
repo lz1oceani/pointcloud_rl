@@ -50,7 +50,7 @@ agent_cfg = dict(
     ),
 )
 
-env_cfg = dict(type="gym", env_name="reacher3d_easy-v0", obs_mode="rgbd", img_size=64)
+env_cfg = dict(type="gym", env_name="reacher3d_easy-v0", obs_mode="rgbd", image_size=64, horizon=1)
 
 
 train_cfg = dict(

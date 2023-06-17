@@ -8,7 +8,9 @@ from collections import defaultdict
 class DistEnv(Env):
     def __init__(self, image_size=20, n=2, obs_mode="state", max_depth=2, pad=2, ego_mode=False, box_size=1, max_dist=5, min_dist=2):
         # Num of
-        self.img_size = image_size[0]
+        if isinstance(image_size, list):
+            image_size = image_size[0]
+        self.img_size = image_size
         self.n = n
         self.obs_mode = obs_mode
         self.max_depth = max_depth
